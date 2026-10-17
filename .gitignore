@@ -1,0 +1,5 @@
+*.exe
+*.dat
+*.bin
+node_modules/
+dist/
