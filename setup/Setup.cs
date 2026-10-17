@@ -59,7 +59,12 @@ static partial class Rus
         AddReg(roots, Registry.LocalMachine, @"SOFTWARE\WOW6432Node\Valve\Steam", "InstallPath");
         AddReg(roots, Registry.LocalMachine, @"SOFTWARE\Valve\Steam", "InstallPath");
         roots.Add(@"C:\Program Files (x86)\Steam");
+        return FindInSteam(roots);
+    }
 
+    // Ищет игру в библиотеках Steam: корни Steam + пути из libraryfolders.vdf
+    public static string FindInSteam(List<string> roots)
+    {
         var libs = new List<string>();
         foreach (string r in roots)
         {
