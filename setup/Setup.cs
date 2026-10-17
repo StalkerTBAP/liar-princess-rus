@@ -329,6 +329,7 @@ class MainForm : Form
         string found = Rus.FindGame();
         path.Text = found ?? "";
         UpdateStatus();
+        ActiveControl = install.Enabled ? (Control)install : browse;
     }
 
     void UpdateStatus()
